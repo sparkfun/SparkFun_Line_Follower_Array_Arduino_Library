@@ -1,38 +1,20 @@
-<<<<<<< HEAD
-SparkFun <PRODUCT NAME>
-=======
-SparkFun <PRODUCT NAME> Arduino Library
->>>>>>> fd5b4cdbaea461f0a29699b11aef869223593d73
+SparkFun RedBot Line Follower Bar Arduino Library
 ========================================
 
-![SparkFun Part Name](URL for picture of part)
+![RedBot Line Follower Bar](https://cdn.sparkfun.com/r/140-140/assets/parts/1/0/2/8/8/13166-07a.jpg)
 
-[*SparkFun Part Name (SKU)*](URL for product on Sparkfun.com)
+[*RedBot Line Follower Bar (SKU-00000)*](http://www.sparkfun.com)
 
-<<<<<<< HEAD
-<Basic description of the part.>
-=======
-<Basic description of the library.>
->>>>>>> fd5b4cdbaea461f0a29699b11aef869223593d73
+This library for the RedBot Line Following Bar allows the following functions:
+
+* get raw data
+* get position
+* get number of points detected
+* build a circular buffer to record the data as it passes
 
 Repository Contents
 -------------------
 
-<<<<<<< HEAD
-* **/Enclosure** - Enclosure files 
-* **/Firmware** - Example code 
-* **/Hardware** - Eagle design files (.brd, .sch)
-* **/Libraries** - Libraries for use with the <PRODUCT NAME>
-* **/Production** - Production panel files (.brd)
-* **/Software** - Related software for the <PRODUCT NAME>
-
-Documentation
---------------
-* **[Library](GitHub library URL)** - <LANGUAGE> library for the <PRODUCT NAME>.
-* **[Hookup Guide](Learn.SparkFun URL)** - Basic hookup guide for the <PRODUCT NAME>.
-* **[SparkFun Fritzing repo](https://github.com/sparkfun/Fritzing_Parts)** - Fritzing diagrams for SparkFun products.
-* **[SparkFun 3D Model repo](https://github.com/sparkfun/3D_Models)** - 3D models of SparkFun products. 
-=======
 * **/examples** - Example sketches for the library (.ino). Run these from the Arduino IDE. 
 * **/extras** - Additional documentation for the user. These files are ignored by the IDE. 
 * **/src** - Source files for the library (.cpp, .h).
@@ -48,41 +30,23 @@ Documentation
 
 Products that use this Library 
 ---------------------------------
->>>>>>> fd5b4cdbaea461f0a29699b11aef869223593d73
 
-* [Part SKU](SparkFun part URL)- Basic part and short description here
 * [Part SKU](SparkFun part URL)- Basic part and short description here
 
 Version History
 ---------------
-<<<<<<< HEAD
-=======
 
->>>>>>> fd5b4cdbaea461f0a29699b11aef869223593d73
-* [vExxFxxZxxHxxLxxSxx](URL for tag specific to this version) - Description 
-* [vEyyFyyZyyHyyLyySyy](URL for tag specific to this version) - Description
+* [V_0.4.0](https://github.com/sparkfun/RedBot_Line_Follower_Bar_Arduino_Library/tree/V_0.4.0) - Beta Release.  All functions covered
 
 License Information
 -------------------
-<<<<<<< HEAD
-This product is _**open source**_! 
-
-The **hardware** is released under [Creative Commons ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/).
-=======
 
 This product is _**open source**_! 
->>>>>>> fd5b4cdbaea461f0a29699b11aef869223593d73
 
-The **code** is beerware; if you see me (or any other SparkFun employee) at the local, and you've found our code helpful, please buy us a round!
+Please review the LICENSE.md file for license information. 
 
-Please use, reuse, and modify these files as you see fit. Please maintain attribution to SparkFun Electronics and release anything derivative under the same license.
+If you have any questions or concerns on licensing, please contact techsupport@sparkfun.com.
 
 Distributed as-is; no warranty is given.
 
 - Your friends at SparkFun.
-
-_<COLLABORATION CREDIT>_
-<<<<<<< HEAD
-
-=======
->>>>>>> fd5b4cdbaea461f0a29699b11aef869223593d73
