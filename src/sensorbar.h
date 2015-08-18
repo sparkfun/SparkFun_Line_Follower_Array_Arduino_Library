@@ -45,25 +45,35 @@ Distributed as-is; no warranty is given.
 class SensorBar
 {
   public:
-    SensorBar(uint8_t address, uint8_t resetPin = 255, uint8_t interruptPin = 255, uint8_t oscillatorPin = 255);
-    uint8_t init(void);
+    //New functions for bar specific operation
+    SensorBar( uint8_t address, uint8_t resetPin = 255, uint8_t interruptPin = 255, uint8_t oscillatorPin = 255 );
+    uint8_t begin( void );
     uint8_t getRaw( void );
     int8_t getPosition( void );
     uint8_t getDensity( void );
-    void scan( void );
-    //move input to private eventually
-//    uint8_t input;
+	void setBarStrobe( void );
+	void clearBarStrobe( void );
+	void setInvertBits( void ); //Dark (no reflection) = 1, position returns center of dark
+	void clearInvertBits( void ); //Light (reflection) = 1, position returns center of light
 
-    void reset(bool hardware);
-//    void debounceEnable(uint8_t pin);
-//    void enableInterrupt(uint8_t pin, uint8_t riseFall);
-//    unsigned int interruptSource(void);
-//    void configClock(uint8_t oscSource = 2, uint8_t oscPinFunction = 0, uint8_t oscFreqOut = 0, uint8_t oscDivider = 1);
+	//Functions pulled from the SX1509 driver
+    void reset( void );
+	void debounceConfig( uint8_t configValue );
+    void debounceEnable( uint8_t pin );
+    void enableInterrupt( uint8_t pin, uint8_t riseFall );
+    unsigned int interruptSource( void );
+    void configClock( uint8_t oscSource = 2, uint8_t oscPinFunction = 0, uint8_t oscFreqOut = 0, uint8_t oscDivider = 1 );
 
 
-  //private:
+  private:
+    //Holding variables
     uint8_t lastBarRawValue;
-    uint8_t deviceAddress; // I2C Address of SX1509
+	uint8_t lastBarPositionValue;
+	
+	//Settings
+	uint8_t deviceAddress; // I2C Address of SX1509
+	uint8_t barStrobe; // 0 = always on, 1 = power saving by IR LED strobe
+	uint8_t invertBits; // 1 = invert
 
     // Pin definitions:
     uint8_t pinInterrupt;
@@ -71,6 +81,7 @@ class SensorBar
     uint8_t pinReset;
 
     // Read Functions:
+    void scan( void );
     uint8_t readByte(uint8_t registerAddress);
     unsigned int readWord(uint8_t registerAddress);
     void readBytes(uint8_t firstRegisterAddress, uint8_t * destination, uint8_t length);
@@ -82,27 +93,28 @@ class SensorBar
 
 //****************************************************************************//
 //
-//  Circular stack
+//  Circular Buffer
 //
 //****************************************************************************//
 
-//Class CircularStack is int16_t
-//Does not care about over-running real data ( if request is outside length's bounds )
-//The underlying machine writes [48], [49], [0], [1] ... 
-#define CSTACK_MAX_LENGTH 500
+//Class CircularBuffer is int16_t
+//Does not care about over-running real data ( if request is outside length's bounds ).
+//For example, the underlying machine writes [48], [49], [0], [1] ... 
 
-class CircularStack
+class CircularBuffer
 {
 public:
-    CircularStack();
-    int16_t getElement( uint8_t ); //zero is the push location
+    CircularBuffer( uint16_t inputSize );
+	~CircularBuffer();
+    int16_t getElement( uint16_t ); //zero is the push location
     void pushElement( int16_t );
-    int16_t averageLast( uint8_t );
-    uint8_t recordLength( void );
+    int16_t averageLast( uint16_t );
+    uint16_t recordLength( void );
 private:
-    int16_t cStackData[CSTACK_MAX_LENGTH];
-    int16_t cStackLastPtr;
-    uint8_t cStackElementsUsed;
+	uint16_t cBufferSize;
+    int16_t *cBufferData;
+    int16_t cBufferLastPtr;
+    uint8_t cBufferElementsUsed;
 };
 
 

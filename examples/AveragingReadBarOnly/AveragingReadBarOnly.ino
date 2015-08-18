@@ -1,4 +1,33 @@
-#include "chartools.h"
+/******************************************************************************
+AveragingReadBarOnly.ino
+
+A sketch for reading sensor data into a circular buffer
+
+Marshall Taylor, SparkFun Engineering
+
+5-27-2015
+
+<github repository address>
+
+This sketch shows how to use the circular buffer class to create a history of
+sensor bar scans.
+The buffer is hard-coded (see CSTACK_MAX_LENGTH in sensorbar.h) to have a size of
+200 16bit integers.
+
+Resources:
+sensorbar.h
+
+Development environment specifics:
+arduino v1.6.4
+hw v1.0
+
+This code is released under the [MIT License](http://opensource.org/licenses/MIT).
+Please review the LICENSE.md file included with this example. If you have any questions 
+or concerns with licensing, please contact techsupport@sparkfun.com.
+Distributed as-is; no warranty is given.
+******************************************************************************/
+#define CBUFFER_SIZE 100
+
 #include "Wire.h"
 #include "sensorbar.h"
 
@@ -11,40 +40,60 @@ const uint8_t SX1509_ADDRESS = 0x3E;  // SX1509 I2C address (00)
 
 SensorBar mySensorBar(SX1509_ADDRESS);
 
-CircularStack positionHistory;
-uint16_t msTick = 0;
+CircularBuffer positionHistory(CBUFFER_SIZE);
+
 
 void setup()
 {
-  Wire.begin();        // join i2c bus (address optional for master)
-  Serial.begin(38400);  // start serial for output
+  Serial.begin(115200);  // start serial for output
+  Serial.println("Program started.");
+  Serial.println();
+  
+  //For this demo, the IR will only be turned on during reads.
+  mySensorBar.setBarStrobe();
+  //Other option: Command to run all the time
+  //mySensorBar.clearBarStrobe();
+
+  //Default dark on light
+  mySensorBar.clearInvertBits();
+  //Other option: light line on dark
+  //mySensorBar.setInvertBits();
+  
+  uint8_t returnStatus = mySensorBar.begin();
+  if(returnStatus)
+  {
+	  Serial.println("sx1509 IC communication OK");
+  }
+  else
+  {
+	  Serial.println("sx1509 IC communication FAILED!");
+	  while(1);
+  }
+  Serial.println();
+  
 }
 
 void loop()
 {
-  //Wait 1 ms
-  delay(5);
+  //Wait 50 ms
+  delay(25);
 
-  //Increment the tick
-  msTick++;
 
-  //Do ms related activities
+  //Get the data from the bar and save it to the circular buffer positionHistory.
   int temp = mySensorBar.getDensity();
   if( (temp < 4)&&(temp > 0) )
   {
     positionHistory.pushElement( mySensorBar.getPosition());
   }
 
-  //If the tick is too high, decrement it and do long scale activities
-  if( msTick > 20 )
-  {
-    msTick -= 20;
 
-    //print me a meter!
+  //print me a meter!
+  {
     int16_t i;
-    int16_t avePos = positionHistory.averageLast( 100 );
+	//Get an average of the last 'n' readings
+    int16_t avePos = positionHistory.averageLast( 10 );
     Serial.print("Scale = 5/char :");
-    for( i = 130; i >= -130; i = i - 5 )
+    for( i = -130; i <= 130; i = i + 5 )
     {
       if( i < 0 )
       {
