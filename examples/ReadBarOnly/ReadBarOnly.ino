@@ -7,11 +7,14 @@ Marshall Taylor, SparkFun Engineering
 
 5-27-2015
 
-<github repository address>
+Library:
+https://github.com/sparkfun/SparkFun_Line_Follower_Array_Arduino_Library
+Product:
+https://github.com/sparkfun/Line_Follower_Array
 
 This sketch simply reads the data from the bar and prints it to the serial buffer.
   "SensorBar mySensorBar(SX1509_ADDRESS);" creates the sensor bar object.
-  "mySensorBar.init();" gets the bar ready.
+  "mySensorBar.begin();" gets the bar ready.
   "mySensorBar.getDensity()" gets the number of points sensed.
   "mySensorBar.getPosition()" gets the average center of sensed points.
   
@@ -19,7 +22,7 @@ Resources:
 sensorbar.h
 
 Development environment specifics:
-arduino v1.6.4
+arduino > v1.6.4
 hw v1.0
 
 This code is released under the [MIT License](http://opensource.org/licenses/MIT).

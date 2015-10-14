@@ -1,11 +1,11 @@
-SparkFun RedBot Line Follower Bar Arduino Library
+SparkFun RedBot Line Follower Array Arduino Library
 ========================================
 
-![RedBot Line Follower Bar](https://cdn.sparkfun.com/r/140-140/assets/parts/1/0/2/8/8/13166-07a.jpg)
+![SparkFun Line Follower Array](https://raw.githubusercontent.com/sparkfun/SparkFun_Line_Follower_Array_Arduino_Library/master/extras/BoardPicture.png?token=AKhi91BrwgQjDyN_JtS7Qd-Hquv4fkMiks5WJn4hwA%3D%3D)
 
-[*RedBot Line Follower Bar (SKU-00000)*](http://www.sparkfun.com)
+[*SparkFun Line Follower Array (SEN-13582)*](https://www.sparkfun.com/products/13582)
 
-This library for the RedBot Line Following Bar allows the following functions:
+This library for the Line Following Array allows the following functions:
 
 * get raw data
 * get position
@@ -26,17 +26,18 @@ Documentation
 
 * **[Installing an Arduino Library Guide](https://learn.sparkfun.com/tutorials/installing-an-arduino-library)** - Basic information on how to install an Arduino library.
 * **[Product Repository](GitHub Product URL)** - Main repository (including hardware files) for the <PRODUCT NAME>.
-* **[Hookup Guide](Learn.SparkFun URL)** - Basic hookup guide for the <PRODUCT NAME>.
+* **[Line Follower Array Hookup Guide](https://learn.sparkfun.com/tutorials/sparkfun-line-follower-array-hookup-guide)** - Basic hookup guide for the *SparkFun Line Follower Array (SEN-13582)*.
 
 Products that use this Library 
 ---------------------------------
 
-* [Part SKU](SparkFun part URL)- Basic part and short description here
+* [*SparkFun Line Follower Array (SEN-13582)*](https://www.sparkfun.com/products/13582)
 
 Version History
 ---------------
 
-* [V_0.4.0](https://github.com/sparkfun/RedBot_Line_Follower_Bar_Arduino_Library/tree/V_0.4.0) - Beta Release.  All functions covered
+* [V_1.0.0](https://github.com/sparkfun/SparkFun_Line_Follower_Array_Arduino_Library/tree/V_1.0.0) - Public release, names and links formalized.
+* [V_0.4.0](https://github.com/sparkfun/SparkFun_Line_Follower_Array_Arduino_Library/tree/V_0.4.0) - Beta release.  All functions covered
 
 License Information
 -------------------

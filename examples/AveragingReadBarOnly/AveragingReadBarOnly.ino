@@ -7,18 +7,20 @@ Marshall Taylor, SparkFun Engineering
 
 5-27-2015
 
-<github repository address>
+Library:
+https://github.com/sparkfun/SparkFun_Line_Follower_Array_Arduino_Library
+Product:
+https://github.com/sparkfun/Line_Follower_Array
 
 This sketch shows how to use the circular buffer class to create a history of
 sensor bar scans.
-The buffer is hard-coded (see CSTACK_MAX_LENGTH in sensorbar.h) to have a size of
-200 16bit integers.
+The buffer configured with CBUFFER_SIZE to have a length of 100 16bit integers.
 
 Resources:
 sensorbar.h
 
 Development environment specifics:
-arduino v1.6.4
+arduino > v1.6.4
 hw v1.0
 
 This code is released under the [MIT License](http://opensource.org/licenses/MIT).

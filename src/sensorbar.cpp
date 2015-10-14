@@ -1,17 +1,19 @@
 /******************************************************************************
 sensorbar.cpp
 
-RedBot Sensor Bar Library
+SparkFun Line Follower Array Arduino Library
 
 Marshall Taylor, SparkFun Engineering
 
 5-27-2015
 
-https://github.com/sparkfun/RedBot_Line_Follower_Bar
+Library:
+https://github.com/sparkfun/SparkFun_Line_Follower_Array_Arduino_Library
+Product:
+https://github.com/sparkfun/Line_Follower_Array
 
 This is a library for reading the sensor bar's data by I2C.  It was originally
-adapted from the "SparkFun SX1509 IO Expander Breakout Arduino Library" that
-was written by Jim Lindblom.
+adapted from the "SparkFun SX1509 IO Expander Breakout Arduino Library".
 
 Resources:
 Relies on the I2C driver (wire.h).  Declaring an object of type SensorBar and
@@ -20,9 +22,9 @@ then calling .begin() causes wire.h to operate
 Development environment specifics:
 Tested on the RedBot 328 based arduino board.
 
-This code is beerware; if you see me (or any other SparkFun employee) at the
-local, and you've found our code helpful, please buy us a round!
-
+This code is released under the [MIT License](http://opensource.org/licenses/MIT).
+Please review the LICENSE.md file included with this example. If you have any questions 
+or concerns with licensing, please contact techsupport@sparkfun.com.
 Distributed as-is; no warranty is given.
 ******************************************************************************/
 

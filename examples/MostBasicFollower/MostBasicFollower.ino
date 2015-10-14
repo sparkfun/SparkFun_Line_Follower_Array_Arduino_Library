@@ -1,13 +1,16 @@
 /******************************************************************************
 MostBasicFollower.ino
 
-A very simple method for following a line with a redbot and sensor bar.
+A very simple method for following a line with a redbot and the line follower array.
 
 Marshall Taylor, SparkFun Engineering
 
 5-27-2015
 
-<github repository address>
+Library:
+https://github.com/sparkfun/SparkFun_Line_Follower_Array_Arduino_Library
+Product:
+https://github.com/sparkfun/Line_Follower_Array
 
 This example demonstrates the easiest way to interface the redbot sensor bar.
   "SensorBar mySensorBar(SX1509_ADDRESS);" creates the sensor bar object.
@@ -31,7 +34,7 @@ Resources:
 sensorbar.h
 
 Development environment specifics:
-arduino v1.6.4
+arduino > v1.6.4
 hw v1.0
 
 This code is released under the [MIT License](http://opensource.org/licenses/MIT).
