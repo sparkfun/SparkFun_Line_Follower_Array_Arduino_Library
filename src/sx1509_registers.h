@@ -1,6 +1,6 @@
 #ifndef SX1509_REGS_H
 #define SX1509_REGS_H
-#include "arduino.h"
+#include "Arduino.h"
 
 /* 
 	sx1509_registers.h
