@@ -25,7 +25,7 @@ Documentation
 --------------
 
 * **[Installing an Arduino Library Guide](https://learn.sparkfun.com/tutorials/installing-an-arduino-library)** - Basic information on how to install an Arduino library.
-* **[Product Repository](GitHub Product URL)** - Main repository (including hardware files) for the <PRODUCT NAME>.
+* **[Product Repository](https://github.com/sparkfun/Line_Follower_Array)** - Main repository (including hardware files) for the Line Follower Array.
 * **[Line Follower Array Hookup Guide](https://learn.sparkfun.com/tutorials/sparkfun-line-follower-array-hookup-guide)** - Basic hookup guide for the *SparkFun Line Follower Array (SEN-13582)*.
 
 Products that use this Library 
