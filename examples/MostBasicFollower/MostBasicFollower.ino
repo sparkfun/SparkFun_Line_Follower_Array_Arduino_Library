@@ -48,6 +48,7 @@ Distributed as-is; no warranty is given.
 #include "sensorbar.h"
 #include <RedBot.h>  // This line "includes" the RedBot library into your sketch.
 // Provides special objects, methods, and functions for the RedBot.
+//The Redbot Library can be found here: https://github.com/sparkfun/RedBot
 
 // Uncomment one of the four lines to match your SX1509's address
 //  pin selects. SX1509 breakout defaults to [0:0] (0x3E).
